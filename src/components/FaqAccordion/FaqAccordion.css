@@ -4,7 +4,7 @@
 }
 
 .faq-item {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .faq-item__question {
@@ -27,7 +27,7 @@
 
 .faq-item__icon {
   font-size: 1.4rem;
-  font-weight: 300;
+  font-weight: 500;
   flex-shrink: 0;
   transition: transform var(--transition-base);
   width: 28px;
@@ -37,6 +37,7 @@
   justify-content: center;
   border-radius: 50%;
   background: var(--color-surface);
+  color: #000;
 }
 
 .faq-item--open .faq-item__icon {

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 import './Footer.css'
 
 const quickLinks = [
@@ -38,8 +39,15 @@ export default function Footer() {
         variants={containerVariants}
       >
         <motion.div className="footer__brand" variants={itemVariants}>
-          <h3><span className="footer__logo-icon">🧘</span> Sidhanthi Guru Yoga</h3>
-          <p>Inspiring wellness since 2008. Join our community and discover your inner strength.</p>
+          <Link to="/" className="footer__logo-link">
+            <img 
+              src="/images/Sidhanthi_Guru_Logo__1_-removebg-preview.png" 
+              alt="Sidhanthi Guru Logo" 
+              className="footer__logo-image" 
+            />
+            <span className="footer__logo-text">Sidhanthi Guru Yoga</span>
+          </Link>
+          <p>Inspiring wellness since 2008. Join our<br/>community and discover your inner strength.</p>
           <div className="footer__location">
              <p>📍 Chennai, Tamil Nadu, India</p>
           </div>
@@ -47,12 +55,14 @@ export default function Footer() {
 
         <motion.div className="footer__links" variants={itemVariants}>
           <h4>Explore</h4>
-          <ul>
+          <ul className="footer__links-grid">
             {quickLinks.map((link) => (
               <li key={link.to}>
                 <Link to={link.to}>{link.label}</Link>
               </li>
             ))}
+            <li><Link to="/about#team">Our Team</Link></li>
+            <li><Link to="/contact">FAQ</Link></li>
           </ul>
         </motion.div>
 
@@ -60,23 +70,24 @@ export default function Footer() {
           <h4>Get in Touch</h4>
           <ul>
             <li>
-              <Link to="/contact" style={{ color: '#166534', fontWeight: '600' }}>Book a Class →</Link>
+              <Link to="/contact" style={{ color: '#ffffff', fontWeight: '600' }}>Book a Class →</Link>
             </li>
-            <li>
+            <li style={{ marginTop: '12px', marginBottom: '16px' }}>
               <a href="mailto:sidhanthiguru@gmail.com">sidhanthiguru@gmail.com</a>
             </li>
             <li className="footer__social">
-              {['FB', 'IG', 'LI', 'YT'].map((platform) => (
-                <motion.a 
-                  key={platform}
-                  href="#" 
-                  aria-label={platform}
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {platform}
-                </motion.a>
-              ))}
+              <motion.a href="#" aria-label="Facebook" whileHover={{ y: -5, scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <FaFacebookF />
+              </motion.a>
+              <motion.a href="#" aria-label="Instagram" whileHover={{ y: -5, scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <FaInstagram />
+              </motion.a>
+              <motion.a href="#" aria-label="LinkedIn" whileHover={{ y: -5, scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <FaLinkedinIn />
+              </motion.a>
+              <motion.a href="#" aria-label="YouTube" whileHover={{ y: -5, scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <FaYoutube />
+              </motion.a>
             </li>
           </ul>
         </motion.div>

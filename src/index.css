@@ -3,8 +3,32 @@
    Global Design System
    =========================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('/images/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('/images/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('/images/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('/images/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 :root {
   /* Colors */
   --color-primary: #16802b;
@@ -18,7 +42,7 @@
   --color-white: #ffffff;
 
   /* Typography */
-  --font-primary: 'Manrope', sans-serif;
+  --font-primary: 'Poppins', sans-serif;
   --font-accent: 'Playfair Display', serif;
 
   /* Spacing */

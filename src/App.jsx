@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import HomePage from './pages/HomePage'
@@ -12,10 +12,13 @@ import NotFoundPage from './pages/NotFoundPage'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
+  const location = useLocation()
+  const isDashboard = location.pathname === '/dashboard'
+
   return (
     <>
       <ScrollToTop />
-      <Navbar />
+      {!isDashboard && <Navbar />}
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -28,7 +31,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
-      <Footer />
+      {!isDashboard && <Footer />}
     </>
   )
 }

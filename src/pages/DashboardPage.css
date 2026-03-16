@@ -359,19 +359,166 @@
 }
 
 @media (max-width: 768px) {
+  /* --- Theme Overrides (Light Green & White) --- */
+  .dashboard-layout.dark-theme {
+    background-color: #f7faf7; /* Light Green Tinted White */
+    color: #1a2e1a; /* Dark Green Text */
+  }
+
+  .dashboard-top-nav {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e1eee1;
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    position: relative;
+  }
+
+  .nav-left {
+    text-align: center;
+  }
+
+  .nav-right {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 10px 12px;
+  }
+
+  .nav-btn.secondary {
+    background-color: #ffffff;
+    color: #1a2e1a;
+    border-color: #e1eee1;
+  }
+
+  .user-meta {
+    justify-content: center;
+  }
+
+  .user-meta .badge {
+    color: #16802b;
+    border-color: #16802b;
+  }
+
+  /* --- Container & Spacing --- */
+  .dashboard-container {
+    padding: 24px 16px;
+  }
+
+  .section-label {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  /* --- Stats Grid --- */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
   }
-  
-  .dashboard-top-nav {
-    padding: 16px 20px;
+
+  .stat-card {
+    background-color: #ffffff;
+    border-color: #e1eee1;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
-  
-  .dashboard-container {
-    padding: 24px 20px;
+
+  .stat-card:hover {
+    box-shadow: 0 4px 12px rgba(22, 128, 43, 0.1);
   }
-  
-  .form-grid {
-    grid-template-columns: 1fr;
+
+  .stat-value {
+    font-size: 1.25rem;
+    color: #1a2e1a;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: #556b55;
+  }
+
+  /* --- Tabs --- */
+  .tabs-header {
+    gap: 4px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none; /* Hide scrollbar for cleaner look */
+    -ms-overflow-style: none;
+    border-bottom: 1px solid #e1eee1;
+  }
+
+  .tabs-header::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    border-radius: 8px 8px 0 0;
+  }
+
+  /* --- Forms & Tables --- */
+  .data-table-wrapper {
+    background-color: #ffffff;
+    border-color: #e1eee1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    overflow-x: auto;
+  }
+
+  .data-table th {
+    background-color: #f0f4f0;
+    color: #556b55;
+    border-bottom-color: #e1eee1;
+  }
+
+  .data-table td {
+    border-bottom-color: #f0f4f0;
+    color: #1a2e1a;
+  }
+
+  .create-form-wrapper {
+    background-color: #ffffff;
+    border-color: #e1eee1;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .form-group label {
+    color: #556b55;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background-color: #f9fbf9;
+    border-color: #e1eee1;
+    color: #1a2e1a;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #16802b;
+    background-color: #ffffff;
+  }
+
+  .btn-small {
+    background-color: #f0f4f0;
+    color: #16802b;
+  }
+
+  .table-badge {
+    background-color: #f0f4f0;
+    color: #16802b;
+    border-color: #c8e6c9;
   }
 }
+

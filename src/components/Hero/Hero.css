@@ -161,10 +161,27 @@
   }
 
   .hero__badge {
-    flex-direction: column;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
-    padding: 16px 24px;
     margin-top: 32px;
+    width: 100%;
+  }
+
+  .hero__badge span {
+    background: var(--color-white);
+    padding: 8px 16px;
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .hero__ctas {

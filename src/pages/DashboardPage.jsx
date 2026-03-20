@@ -9,13 +9,24 @@ import {
   Layout, 
   Clock, 
   CheckCircle, 
-  Users 
+  Users,
+  Menu,
+  X
 } from 'lucide-react'
 import BlogCard from '../components/BlogCard/BlogCard'
 import './DashboardPage.css'
 
 export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState('blogs')
+  const [isSidebarOpen, setSidebarOpen] = useState(false)
+
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen)
+  const closeSidebar = () => setSidebarOpen(false)
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab)
+    closeSidebar()
+  }
 
   const stats = [
     { label: 'Total Blogs', value: '12', icon: <BookOpen />, color: '#6366f1' },
@@ -56,6 +67,9 @@ export default function DashboardPage() {
       {/* Top Navigation */}
       <nav className="dashboard-top-nav">
         <div className="nav-left">
+          <button className="menu-toggle" onClick={toggleSidebar}>
+            <Menu size={24} />
+          </button>
           <div className="brand-info">
             <h2>Sidhanthi Guru</h2>
             <div className="user-meta">
@@ -66,13 +80,55 @@ export default function DashboardPage() {
         </div>
         <div className="nav-right">
           <Link to="/" className="nav-btn secondary">
-            <ExternalLink size={18} /> Back to Site
+            <ExternalLink size={18} /> <span className="btn-text">Back to Site</span>
           </Link>
           <Link to="/" className="nav-btn danger">
-            <LogOut size={18} /> Logout
+            <LogOut size={18} /> <span className="btn-text">Logout</span>
           </Link>
         </div>
       </nav>
+
+      {/* Mobile Sidebar overlay */}
+      {isSidebarOpen && <div className="sidebar-overlay" onClick={closeSidebar}></div>}
+
+      {/* Sidebar Navigation */}
+      <aside className={`dashboard-sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <div className="sidebar-header">
+          <h3>Dashboard</h3>
+          <button className="close-btn" onClick={closeSidebar}>
+            <X size={24} />
+          </button>
+        </div>
+        <div className="sidebar-nav">
+          <button 
+            className={`sidebar-link ${activeTab === 'blogs' ? 'active' : ''}`}
+            onClick={() => handleTabChange('blogs')}
+          >
+            <BookOpen size={20} /> Blogs
+          </button>
+          <button 
+            className={`sidebar-link ${activeTab === 'create' ? 'active' : ''}`}
+            onClick={() => handleTabChange('create')}
+          >
+            <PlusCircle size={20} /> Create Blog
+          </button>
+          <button 
+            className={`sidebar-link ${activeTab === 'forms' ? 'active' : ''}`}
+            onClick={() => handleTabChange('forms')}
+          >
+            <MessageSquare size={20} /> Form Submissions
+          </button>
+        </div>
+        
+        <div className="sidebar-footer">
+          <Link to="/" className="sidebar-link">
+            <ExternalLink size={20} /> Main Website
+          </Link>
+          <button className="sidebar-link danger">
+            <LogOut size={20} /> Logout
+          </button>
+        </div>
+      </aside>
 
       <div className="dashboard-container">
         {/* Overview Header */}

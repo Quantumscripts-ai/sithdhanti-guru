@@ -358,6 +358,13 @@
   }
 }
 
+/* Sidebar & Menu Toggle (Desktop Hidden) */
+.menu-toggle,
+.dashboard-sidebar,
+.sidebar-overlay {
+  display: none;
+}
+
 @media (max-width: 768px) {
   /* --- Theme Overrides (Light Green & White) --- */
   .dashboard-layout.dark-theme {
@@ -369,26 +376,51 @@
     background-color: #ffffff;
     border-bottom: 2px solid #e1eee1;
     padding: 16px 20px;
-    flex-direction: column;
-    gap: 16px;
-    align-items: stretch;
-    position: relative;
+    flex-direction: row; /* Keep row for nav and hamburger */
+    gap: 12px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #16802b;
+    cursor: pointer;
+    padding: 8px;
+    margin-right: -8px;
   }
 
   .nav-left {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    flex: 1;
   }
 
   .nav-right {
-    justify-content: center;
-    width: 100%;
+    display: flex;
+    gap: 8px;
+    width: auto;
   }
 
   .nav-btn {
-    flex: 1;
-    justify-content: center;
-    font-size: 0.8rem;
-    padding: 10px 12px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .nav-btn .btn-text {
+    display: none; /* Hide text on small screens to save space */
+  }
+
+  .btn-text {
+    display: inline;
   }
 
   .nav-btn.secondary {
@@ -398,12 +430,122 @@
   }
 
   .user-meta {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .user-meta .badge {
     color: #16802b;
     border-color: #16802b;
+  }
+
+  /* --- Sidebar (Mobile Only) --- */
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .dashboard-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -280px; /* Start hidden */
+    width: 280px;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 2100;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .dashboard-sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-header {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f4f0;
+  }
+
+  .sidebar-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #16802b;
+    font-weight: 700;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    color: #556b55;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: #556b55;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .sidebar-link:hover {
+    background-color: #f7faf7;
+    color: #16802b;
+  }
+
+  .sidebar-link.active {
+    background-color: #f0f4f0;
+    color: #16802b;
+    font-weight: 600;
+  }
+
+  .sidebar-link.danger {
+    color: var(--db-danger);
+    margin-top: auto;
+  }
+
+  .sidebar-footer {
+    padding: 16px;
+    border-top: 1px solid #f0f4f0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* --- Hide Old Tabs on Mobile --- */
+  .tabs-header {
+    display: none;
   }
 
   /* --- Container & Spacing --- */
@@ -413,7 +555,7 @@
 
   .section-label {
     margin-bottom: 16px;
-    text-align: center;
+    text-align: left;
   }
 
   /* --- Stats Grid --- */
@@ -442,27 +584,6 @@
   .stat-label {
     font-size: 0.75rem;
     color: #556b55;
-  }
-
-  /* --- Tabs --- */
-  .tabs-header {
-    gap: 4px;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scrollbar-width: none; /* Hide scrollbar for cleaner look */
-    -ms-overflow-style: none;
-    border-bottom: 1px solid #e1eee1;
-  }
-
-  .tabs-header::-webkit-scrollbar {
-    display: none;
-  }
-
-  .tab-btn {
-    padding: 10px 16px;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    border-radius: 8px 8px 0 0;
   }
 
   /* --- Forms & Tables --- */

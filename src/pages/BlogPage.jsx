@@ -6,9 +6,9 @@ import { blogPosts, blogCategories } from '../data/blog'
 import './BlogPage.css'
 
 const blogImages = [
-  "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop"
+  "/images/attachments (1)/IMG_0399.JPG",
+  "/images/attachments (1)/IMG_0430.JPG",
+  "/images/attachments (1)/IMG_0436.JPG"
 ];
 
 export default function BlogPage() {

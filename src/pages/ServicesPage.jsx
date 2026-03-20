@@ -8,10 +8,10 @@ import { faqItems } from '../data/faq'
 import './ServicesPage.css'
 
 const serviceImages = {
-  hatha: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1840&auto=format&fit=crop",
-  vinyasa: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070&auto=format&fit=crop",
-  meditation: "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?q=80&w=2070&auto=format&fit=crop",
-  corporate: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=2070&auto=format&fit=crop"
+  hatha: "/images/attachments/IMG_0100.JPG",
+  vinyasa: "/images/attachments/IMG_0105.JPG",
+  meditation: "/images/attachments (1)/IMG_0388.JPG",
+  corporate: "/images/attachments (1)/IMG_0391.JPG"
 };
 
 export default function ServicesPage() {

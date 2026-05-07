@@ -63,17 +63,32 @@ export default function Hero({
         <ScrollReveal delay={300}>
           <div className="hero__ctas">
             {primaryCta && (
-              <Link to={primaryCta.to} className="btn btn-primary">
-                {primaryCta.label}
-              </Link>
+              primaryCta.to.startsWith('#') ? (
+                <a href={primaryCta.to} className="btn btn-primary">
+                  {primaryCta.label}
+                </a>
+              ) : (
+                <Link to={primaryCta.to} className="btn btn-primary">
+                  {primaryCta.label}
+                </Link>
+              )
             )}
             {secondaryCta && (
-              <Link 
-                to={secondaryCta.to} 
-                className={`btn ${secondaryCta.className || 'btn-secondary'}`}
-              >
-                {secondaryCta.label}
-              </Link>
+              secondaryCta.to.startsWith('#') ? (
+                <a 
+                  href={secondaryCta.to} 
+                  className={`btn ${secondaryCta.className || 'btn-secondary'}`}
+                >
+                  {secondaryCta.label}
+                </a>
+              ) : (
+                <Link 
+                  to={secondaryCta.to} 
+                  className={`btn ${secondaryCta.className || 'btn-secondary'}`}
+                >
+                  {secondaryCta.label}
+                </Link>
+              )
             )}
           </div>
         </ScrollReveal>

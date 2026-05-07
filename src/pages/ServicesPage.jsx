@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Hero from '../components/Hero/Hero'
 import FaqAccordion from '../components/FaqAccordion/FaqAccordion'
 import ScrollReveal from '../components/ScrollReveal/ScrollReveal'
@@ -73,6 +74,19 @@ const consultationModes = [
 ]
 
 export default function ServicesPage() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.substring(1))
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
+      }
+    }
+  }, [hash])
+
   return (
     <div className="services-page">
       <Hero

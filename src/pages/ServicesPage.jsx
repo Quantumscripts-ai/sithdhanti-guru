@@ -80,8 +80,7 @@ export default function ServicesPage() {
         accentWords="Programs & Services"
         subtitle="Discover Your Path to Transformation"
         body="At Sidhanthi Guru Yoga Academy, we offer authentic yoga programs, structured courses, and holistic naturopathy care — available Online and Offline — tailored to every individual's health and wellness goals."
-        primaryCta={{ label: 'Contact Us', to: '/contact' }}
-        secondaryCta={{ label: 'View Products', to: '#products', className: 'btn-primary' }}
+        primaryCta={{ label: 'View Products', to: '#products' }}
       />
 
       <SectionDivider />

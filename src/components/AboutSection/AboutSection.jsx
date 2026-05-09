@@ -33,12 +33,12 @@ export default function AboutSection() {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <span>9PM6+498 Chidambaram, Tamil Nadu</span>
+              <span>Chidambaram, Tamil Nadu</span>
             </div>
             
             <div className="about-location__map-container">
               <iframe
-                src="https://maps.google.com/maps?q=9PM6%2B498%20Chidambaram,%20Tamil%20Nadu&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Chidambaram,%20Tamil%20Nadu&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

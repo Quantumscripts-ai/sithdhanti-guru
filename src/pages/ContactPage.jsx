@@ -41,7 +41,7 @@ export default function ContactPage() {
 
               <div className="contact-info__card">
                 <h3>📍 Address</h3>
-                <p>9PM6+498<br />CHIDAMBARAM<br />TAMIL NADU<br />INDIA</p>
+                <p>CHIDAMBARAM<br />TAMIL NADU<br />INDIA</p>
               </div>
 
               <div className="contact-info__card">
@@ -78,7 +78,7 @@ export default function ContactPage() {
           <ScrollReveal delay={200}>
             <div className="contact-map-container">
               <iframe
-                src="https://maps.google.com/maps?q=9PM6%2B498%20Chidambaram,%20Tamil%20Nadu&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Chidambaram,%20Tamil%20Nadu&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

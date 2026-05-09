@@ -49,7 +49,7 @@ export default function Footer() {
           </Link>
           <p>Inspiring wellness since 2008. Join our<br />community and discover your inner strength.</p>
           <div className="footer__location">
-            <p>📍 9PM6+498 Chidambaram, Tamil Nadu</p>
+            <p>📍 Chidambaram, Tamil Nadu</p>
           </div>
         </motion.div>
 
